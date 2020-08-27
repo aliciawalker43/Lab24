@@ -1,11 +1,13 @@
 package GC.Lab24.Entity;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,22 +18,36 @@ public class Party {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private LocalDate date;
+	private String date;
+	@OneToMany(mappedBy="party")
+	private Set<Rsvp> rsvps;
 	
 	
 	
-	
+	public Party(Long id, String name, String date, Set<Rsvp> rsvps) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.date = date;
+		this.rsvps = rsvps;
+	}
+
+
 	public Party() {
 		super();
 	}
 
 
-	public Party(Long id, String name, LocalDate date) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.date = date;
+	
+	public Set<Rsvp> getRsvps() {
+		return rsvps;
 	}
+
+
+	public void setRsvps(Set<Rsvp> rsvps) {
+		this.rsvps = rsvps;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -48,11 +64,11 @@ public class Party {
 		this.name = name;
 	}
 
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

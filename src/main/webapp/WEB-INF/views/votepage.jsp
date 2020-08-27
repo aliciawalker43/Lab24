@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Pizza Specials</h1>
+		<h1>Party & Events</h1>
 		<table class="table">
 			
 			<tbody>
@@ -22,7 +22,7 @@
 					<td><c:out value="${party.description}"/></td>
 					<td><c:out value="${party.votes}"/></td>
 					
-					<td><a href="/votepage?id=${party.id}" >Vote</a></td>
+					<td><a href="/addvote?id=${party.id}" >Vote</a></td>
 				</tr>
 				</c:forEach>
 	
@@ -33,7 +33,7 @@
 	</div>
 	<div class="container">
 	<tr>
-	<form action=("/addOption") />
+	<form action="/addOption" />
 	<h4> Special Name<input type="name" name="name"></input> Description<input type="text" name="description"></input><button>add</button></h4>
     </form>
     </tr>

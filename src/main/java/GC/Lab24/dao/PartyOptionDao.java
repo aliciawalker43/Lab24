@@ -14,4 +14,6 @@ import GC.Lab24.Entity.PartyOption;
 public interface PartyOptionDao extends JpaRepository<PartyOption, Long>{
 
 	   // add methods & querys
+	
+	
 }
