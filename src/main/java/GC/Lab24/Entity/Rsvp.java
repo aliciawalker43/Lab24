@@ -4,9 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table( name="rsvp")
 public class Rsvp {
 
 	@Id
@@ -15,19 +18,13 @@ public class Rsvp {
 	private String attendee;
 	private String comment;
 	@ManyToOne
+	@JoinColumn(name= "party_Id", unique = true)
 	private Party party;
 	
 	
 	
 	
 	
-	
-	
-	
-	public Rsvp() {
-		super();
-	}
-
 	public Rsvp(Long id, String attendee, String comment, Party party) {
 		super();
 		this.id = id;
@@ -35,6 +32,14 @@ public class Rsvp {
 		this.comment = comment;
 		this.party = party;
 	}
+
+
+
+
+	public Rsvp() {
+		super();
+	}
+
 	
 	public Long getId() {
 		return id;
@@ -60,14 +65,21 @@ public class Rsvp {
 	public void setParty(Party party) {
 		this.party = party;
 	}
-	
-	
-	
+
+
+
+
 	@Override
 	public String toString() {
 		return "Rsvp [id=" + id + ", attendee=" + attendee + ", comment=" + comment + ", party=" + party + "]";
 	}
 
+
+	
+	
+	
+	
+	
 	
 	
 	

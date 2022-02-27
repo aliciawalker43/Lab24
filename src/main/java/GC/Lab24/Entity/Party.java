@@ -1,12 +1,12 @@
 package GC.Lab24.Entity;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,18 +19,13 @@ public class Party {
 	private Long id;
 	private String name;
 	private String date;
+	
 	@OneToMany(mappedBy="party")
-	private Set<Rsvp> rsvps;
+    private Set <Rsvp> rsvps;
 	
 	
 	
-	public Party(Long id, String name, String date, Set<Rsvp> rsvps) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.date = date;
-		this.rsvps = rsvps;
-	}
+	
 
 
 	public Party() {
@@ -38,15 +33,7 @@ public class Party {
 	}
 
 
-	
-	public Set<Rsvp> getRsvps() {
-		return rsvps;
-	}
 
-
-	public void setRsvps(Set<Rsvp> rsvps) {
-		this.rsvps = rsvps;
-	}
 
 
 	public Long getId() {
@@ -72,10 +59,61 @@ public class Party {
 		this.date = date;
 	}
 
+
+
+
+
+	public Set<Rsvp> getRsvps() {
+		return rsvps;
+	}
+
+
+
+
+
+	public void setRsvps(Set<Rsvp> rsvps) {
+		this.rsvps = rsvps;
+	}
+
+
+
+
+
+	public Party(Long id, String name, String date, Set<Rsvp> rsvps) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.date = date;
+		this.rsvps = rsvps;
+	}
+
+
+
+
+
 	@Override
 	public String toString() {
-		return "PartyPojo [id=" + id + ", name=" + name + ", date=" + date + "]";
+		return "Party [id=" + id + ", name=" + name + ", date=" + date + ", rsvps=" + rsvps + "]";
 	}
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+	
 
 	
 	

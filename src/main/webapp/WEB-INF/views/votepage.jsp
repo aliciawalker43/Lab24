@@ -11,12 +11,15 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Party & Events</h1>
+		<h1>Nominees</h1>
 		<table class="table">
 			
 			<tbody>
+			<tr>
+					<th>ID</th><th> Name</th><th>Description</th><th># Votes</th>
+				</tr>
 				<c:forEach var="party" items="${party}">
-				<tr>
+				<tr> 
 					<td><c:out value= "${party.id}"/></td>
 					<td><c:out value=" ${party.name}"/></td>
 					<td><c:out value="${party.description}"/></td>
@@ -31,12 +34,14 @@
 		</table>
 		
 	</div>
-	<div class="container">
+	<div class="container"> <h1>Cast New Candidate </h1>
 	<tr>
 	<form action="/addOption" />
-	<h4> Special Name<input type="name" name="name"></input> Description<input type="text" name="description"></input><button>add</button></h4>
+	<h4> Name<input type="name" name="name"></input> Description<input type="text" name="description"></input><button>add</button></h4>
     </form>
     </tr>
+    
+    <a href="/" >Return Home</a>
     </div>
 </body>
 </html>

@@ -5,30 +5,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="/temp.css" rel="stylesheet" /> 
 <meta charset="UTF-8">
 <title>Party Details</title>
 </head>
 <body>
-<h1>Party:${party.name}</h1>
-<p>${party.date}</p><br>
-<h2>RSVPs</h2>
+<h1>Event: <br>${party.name}</h1>
+<p>Date of event : ${party.date}</p><br>
+
+
 <table class="table">
-			<thead>
+			<thead><h3>RSVPS</h3>
 				<tr>
-					<th>Attendee</th>
-					<th>Comment</th>
+					<th>Attendees</th> <th>Comments</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="rsvp" items="${party.rsvps}">
+				<c:forEach var="att" items="${party.rsvps}">
 				<tr>
-						<td>${rsvp.attendee}</td>
-						<td>${rsvp.comment}</td>
+						<td>${att.attendee}</td>
+						<td>${att.comment}</td>
 						
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 </div>
+ <a href="/" >Return Home</a>
 </body>
 </html>

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<p> Navigation: <a href="/votepage" name= "vote"> Options & Votes</a> <a href="/reviewpage" name= "review">Review Options</a></p>
+<p> Navigation: <a href="/votepage" name= "vote"> Options & Votes</a> <a href="/reviewpage" name= "review">Review Vote Results</a></p>
 <div>
 			<h2> PARTIES</h2>
 				
@@ -42,8 +42,8 @@
 		<h4>RSVP</h4>
 
 		<form action="/save-rsvp" method="post">
-			<p><label>Attendee</label> <input type="name" required name="name"></p>
-			<p><label>Comments</label> <input type="text" required min="0"
+			<p><label>Attendee</label> <input type="name" name="attendee" required name="name"></p>
+			<p><label>Comments</label> <input type="text" name="comment" required min="0"
 				name="level">
 
 			<div>
